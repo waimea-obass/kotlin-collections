@@ -45,12 +45,33 @@ fun main() {
     snacks.shuffle()
     println(snacks)
 
+    snacks.add("Milky Bar")
+    snacks.add("Fruit Burst")
+
     // Get a random item from the list
     val item = snacks.random()
-    println(item)
+    println("Random item: $item ")
+
+    //Searching for an item
+    println("Tim Tams is in this list: ${ snacks.contains("Tim Tams")} ") //Is in list so true
+    println("Caramello is in list: ${ snacks.contains("Caramello")} ") //Is not in list so false
+
+    //Getting the index of an item
+    println("Tim Tams is in this list: ${ snacks.indexOf("Tim Tams")} ") //Is in list so true
+    println("Caramello is in list: ${ snacks.indexOf("Caramello")} ") //Is not in list so false
 
     //Loop through the list
     for (snack in snacks) {
         println(snack)
     }
+
+    //Loop using an index
+    for (i in 0 ..< snacks.size) {
+        println("$i: ${snacks[i]} ")
+    }
+    //Loop getting index and values
+    for ((i, snack) in snacks.withIndex()) {
+        println("$i: $snack")
+    }
+
 }
